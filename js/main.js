@@ -221,3 +221,78 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+/* =========== DEEPSEEK: FIXED HERO SLIDESHOW SCRIPT =========== */
+(function () {
+  // Fixed slideshow that properly layers behind content
+  const slideSelector = '.hero-slideshow';
+  const images = [
+    'Assets/Hair_picture.jpg',
+    'Assets/Hair_picture2.jpg'
+  ];
+  const intervalMs = 5000;
+  const transitionMs = 1000;
+
+  function prefersReducedMotion() {
+    try {
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  const el = document.querySelector(slideSelector);
+  if (!el) {
+    console.warn('DeepSeek: .hero-slideshow not found — slideshow not initialized.');
+    return;
+  }
+
+  // Preload images
+  images.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+
+  // Create slide layers
+  const layers = [];
+  images.forEach((src, index) => {
+    const layer = document.createElement('div');
+    layer.className = `slide-layer ${index === 0 ? 'active' : ''}`;
+    layer.style.backgroundImage = `url("${src}")`;
+    layer.style.zIndex = index + 1;
+    el.appendChild(layer);
+    layers.push(layer);
+  });
+
+  let currentIndex = 0;
+
+  if (prefersReducedMotion()) {
+    // Show only first image if reduced motion preferred
+    layers.forEach((layer, index) => {
+      layer.style.opacity = index === 0 ? '1' : '0';
+    });
+    return;
+  }
+
+  // Start slideshow
+  setInterval(() => {
+    const nextIndex = (currentIndex + 1) % layers.length;
+    
+    // Fade out current
+    layers[currentIndex].style.opacity = '0';
+    
+    // Fade in next
+    setTimeout(() => {
+      layers[nextIndex].style.opacity = '1';
+    }, 50);
+    
+    currentIndex = nextIndex;
+  }, intervalMs);
+
+  // Initialize first slide
+  setTimeout(() => {
+    layers[0].style.opacity = '1';
+  }, 100);
+
+})();
+/* =========== END FIXED SLIDESHOW SCRIPT =========== */

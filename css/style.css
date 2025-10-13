@@ -197,7 +197,8 @@ body {
 .hero-content {
     max-width: 800px;
     padding: 0 20px;
-    z-index: 1;
+    z-index: 10; /* Increased z-index to ensure content is above slideshow */
+    position: relative;
 }
 
 .hero-title {
@@ -206,8 +207,9 @@ body {
     font-family: var(--serif);
     font-weight: 500;
     letter-spacing: 1px;
-    color: var(--black);
+    color: var(--black); /* Keep original color but ensure visibility */
     line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); /* Add text shadow for better visibility */
 }
 
 .hero-subtitle {
@@ -218,6 +220,7 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8); /* Add text shadow for better visibility */
 }
 
 .hero-buttons {
@@ -237,6 +240,8 @@ body {
     font-size: 1.1rem;
     letter-spacing: 0.5px;
     text-align: center;
+    position: relative;
+    z-index: 10; /* Ensure buttons are above slideshow */
 }
 
 .btn-primary {
@@ -276,6 +281,8 @@ body {
     color: var(--dark-gray);
     font-size: 0.9rem;
     animation: bounce 2s infinite;
+    z-index: 10; /* Ensure scroll indicator is above slideshow */
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
 }
 
 .scroll-indicator i {
@@ -660,3 +667,122 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========== DEEPSEEK: FIXED HERO SLIDESHOW + HEADER =========== */
+/* Slideshow container that sits behind hero content but above background */
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Between background (-2/-1) and content (10) */
+    overflow: hidden;
+}
+
+.hero-slideshow .slide-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.hero-slideshow .slide-layer.active {
+    opacity: 1;
+}
+
+/* Stronger overlay to ensure text readability */
+.hero-slideshow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.4) 0%, 
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0.4) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Ensure hero content stays above everything */
+.hero-content {
+    z-index: 10 !important;
+}
+
+/* Fix header alignment */
+.nav-container {
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Mobile header fix */
+@media (max-width: 768px) {
+    .logo {
+        position: static;
+        transform: none;
+        text-align: center;
+        flex: 1;
+    }
+    
+    .nav-container {
+        justify-content: space-between;
+    }
+    
+    .hamburger {
+        order: 2;
+    }
+    
+    .logo {
+        order: 1;
+    }
+}
+
+/* Enhanced text visibility */
+.hero-title {
+    text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9),
+                 0px 0px 20px rgba(255, 255, 255, 0.7) !important;
+}
+
+.hero-subtitle {
+    text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.8),
+                 0px 0px 15px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Button enhancements for better visibility */
+.btn {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: var(--pink);
+    color: white;
+    border-color: var(--pink);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--pink);
+    border-color: var(--pink);
+    backdrop-filter: blur(10px);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+/* =========== END DEEPSEEK FIXES =========== */
