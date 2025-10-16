@@ -3,178 +3,516 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Shopper by Miche | Curated Shopping & Styling</title>
-    <meta name="description" content="Premium personal shopping services in Cape Town. Hairlink connections, curated shopping, sourcing, and gift services.">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Shop with Miché | Luxury Personal Shopper Cape Town</title>
+    <meta name="description" content="Premium personal shopping & styling services in Cape Town. Hairlink connections, curated shopping experiences, sourcing, and luxury gift services.">
+    <meta name="keywords" content="personal shopper, Cape Town, styling, haircare, shopping service, gift service">
+    <meta name="author" content="Shop with Miché">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Shop with Miché | Luxury Personal Shopper">
+    <meta property="og:description" content="Premium personal shopping & styling services in Cape Town">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
     <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts for luxury typography -->
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
                 <h2>Shop with Miché</h2>
             </div>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#socials">Book Now</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Shop with Miché</a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#process" class="nav-link">Process</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#gallery" class="nav-link">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item nav-cta">
+                    <a href="#booking" class="nav-link btn-primary">Book Now</a>
+                </li>
             </ul>
+
             <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero">
-        <!-- BEGIN: hero slideshow (inserted by DeepSeek) -->
-        <div class="hero-slideshow" aria-hidden="true"></div>
-        <!-- END: hero slideshow (inserted by DeepSeek) -->
-        <div class="hero-background">
-            <div class="hero-overlay"></div>
+    <section id="home" class="hero">
+        <div class="hero-slideshow">
+            <div class="slide active" style="background-image: url('assets/giftgiving1.jpg')"></div>
+            <div class="slide" style="background-image: url('assets/Hair_picture.jpg')"></div>
+            <div class="slide" style="background-image: url('assets/giftgiving2.jpg')"></div>
+            <div class="slide" style="background-image: url('assets/Hair_picture2.jpg')"></div>
+            <div class="slide" style="background-image: url('assets/giftgiving3.jpg')"></div>
         </div>
+        
+        <div class="hero-overlay"></div>
+        
         <div class="hero-content">
-            <h1 class="hero-title">Curated Shopping & Styling</h1>
-            <p class="hero-subtitle">Experience luxury shopping delivered to your door in Cape Town</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">Explore Services</a>
-                <a href="#socials" class="btn btn-secondary">Book Now</a>
+            <div class="hero-badge">Luxury Personal Shopping</div>
+            <h1 class="hero-title">Curated Style Experiences in Cape Town</h1>
+            <p class="hero-subtitle">Premium personal shopping, haircare connections, and bespoke gifting services tailored to your unique style</p>
+            
+            <div class="hero-actions">
+                <a href="#booking" class="btn btn-primary">
+                    <span>Book Consultation</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#services" class="btn btn-secondary">
+                    <span>Explore Services</span>
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-count="1000">0</div>
+                    <div class="stat-label">Items Sourced</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Vendor Partners</div>
+                </div>
             </div>
         </div>
+        
         <div class="scroll-indicator">
-            <span>Scroll Down</span>
-            <i class="fas fa-chevron-down"></i>
+            <div class="scroll-arrow"></div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section">
+    <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
+            <div class="section-header">
+                <span class="section-subtitle">What We Offer</span>
+                <h2 class="section-title">Premium Services</h2>
+                <p class="section-description">Comprehensive personal shopping and styling solutions designed for the modern individual</p>
+            </div>
+
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3>Hairlink</h3>
-                    <p>Connecting you with premium hair vendors for quality extensions and hair products. We vet all suppliers to ensure you receive only the best.</p>
+                    <h3>Hairlink Connections</h3>
+                    <p>Premium hair vendor network for quality extensions and haircare products. All suppliers thoroughly vetted for excellence.</p>
+                    <ul class="service-features">
+                        <li>Quality hair extensions</li>
+                        <li>Premium haircare products</li>
+                        <li>Vetted suppliers only</li>
+                    </ul>
+                    <a href="#booking" class="service-cta">Get Connected <i class="fas fa-arrow-right"></i></a>
                 </div>
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-shopping-bag"></i>
                     </div>
-                    <h3>Shopping Experience</h3>
-                    <p>Curated shopping with same-day delivery. Tell us what you need, and we'll find the perfect items for your style and budget.</p>
+                    <h3>Personal Shopping</h3>
+                    <p>Curated shopping experiences with same-day delivery. We find perfect items matching your style and budget.</p>
+                    <ul class="service-features">
+                        <li>Same-day delivery</li>
+                        <li>Style consultation</li>
+                        <li>Budget management</li>
+                    </ul>
+                    <a href="#booking" class="service-cta">Start Shopping <i class="fas fa-arrow-right"></i></a>
                 </div>
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-globe"></i>
                     </div>
-                    <h3>Sourcing</h3>
-                    <p>Local and international sourcing for hard-to-find items. We have connections worldwide to get you exactly what you're looking for.</p>
+                    <h3>Global Sourcing</h3>
+                    <p>Local and international sourcing for hard-to-find items. Worldwide connections to get exactly what you need.</p>
+                    <ul class="service-features">
+                        <li>International sourcing</li>
+                        <li>Rare item specialists</li>
+                        <li>Global network</li>
+                    </ul>
+                    <a href="#booking" class="service-cta">Find Items <i class="fas fa-arrow-right"></i></a>
                 </div>
+
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-gift"></i>
                     </div>
-                    <h3>Gift Giving</h3>
-                    <p>Complete gift services including buying, wrapping, and delivering. Perfect for birthdays, anniversaries, or corporate gifts.</p>
+                    <h3>Luxury Gifting</h3>
+                    <p>Complete gift services including selection, wrapping, and delivery. Perfect for all occasions and corporate gifts.</p>
+                    <ul class="service-features">
+                        <li>Gift wrapping included</li>
+                        <li>Personal delivery</li>
+                        <li>Corporate packages</li>
+                    </ul>
+                    <a href="#booking" class="service-cta">Send Gifts <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="section">
+    <!-- Process Section -->
+    <section id="process" class="process">
         <div class="container">
-            <h2 class="section-title">How It Works</h2>
+            <div class="section-header">
+                <span class="section-subtitle">How It Works</span>
+                <h2 class="section-title">Our Process</h2>
+                <p class="section-description">Simple, transparent process designed for your convenience and satisfaction</p>
+            </div>
+
             <div class="process-steps">
+                <div class="process-line"></div>
+                
                 <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Book Your Service</h3>
-                    <p>Contact us via WhatsApp, Instagram, or TikTok to discuss your needs and book your service.</p>
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Initial Consultation</h3>
+                        <p>Contact us via WhatsApp, Instagram, or TikTok to discuss your needs and preferences</p>
+                    </div>
                 </div>
+
                 <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Service Fees</h3>
-                    <p>Each service has its own fee structure. We'll provide a transparent quote before starting.</p>
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Service & Pricing</h3>
+                        <p>Transparent quote provided based on your requirements. Each service has its own fee structure</p>
+                    </div>
                 </div>
+
                 <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Delivery</h3>
-                    <p>Services do not include delivery. Delivery fees are calculated based on location and urgency.</p>
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Execution</h3>
+                        <p>We handle the shopping, sourcing, or gifting according to your specifications and timeline</p>
+                    </div>
                 </div>
+
                 <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Cancellation Policy</h3>
-                    <p>Must cancel within 24 hours. A 10% fee applies if cancellation occurs during shopping.</p>
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Delivery</h3>
+                        <p>Items delivered to your location. Delivery fees calculated based on location and urgency</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-notes">
+                <div class="note">
+                    <i class="fas fa-clock"></i>
+                    <p><strong>Cancellation Policy:</strong> 24-hour notice required. 10% fee if cancelled during active shopping</p>
+                </div>
+                <div class="note">
+                    <i class="fas fa-truck"></i>
+                    <p><strong>Delivery:</strong> Not included in service fees. Calculated separately based on location</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social & Booking Section -->
-    <section id="socials" class="section">
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
         <div class="container">
-            <h2 class="section-title">Connect & Book</h2>
-            <div class="social-buttons">
-                <a href="https://wa.me/message/WPWII6NUPSVHM1" target="_blank" class="btn social-btn whatsapp">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="https://www.instagram.com/shopwithme_official_?igsh=Znh0Z3JsYTlmdTlr&utm_source=qr" target="_blank" class="btn social-btn instagram">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="https://www.tiktok.com/@cpt_personalshopper?_t=ZS-90KDml8sDYe&_r=1" target="_blank" class="btn social-btn tiktok">
-                    <i class="fab fa-tiktok"></i> TikTok
-                </a>
+            <div class="section-header">
+                <span class="section-subtitle">Our Work</span>
+                <h2 class="section-title">Style Gallery</h2>
+                <p class="section-description">See examples of our premium shopping and styling services</p>
             </div>
 
-            <div class="qr-section">
-                <h3>Scan to Book Instantly</h3>
-                <div id="qrcode"></div>
-                <p>Scan this QR code to open WhatsApp and book your service</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/giftgiving1.jpg" alt="Luxury Gift Service" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Premium Gifting</h4>
+                        <p>Beautifully wrapped luxury gifts</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/Hair_picture.jpg" alt="Haircare Products" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Hairlink Quality</h4>
+                        <p>Premium haircare & extensions</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/giftgiving2.jpg" alt="Personal Shopping" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Curated Selection</h4>
+                        <p>Hand-picked luxury items</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/Hair_picture2.jpg" alt="Hair Products" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Quality Assurance</h4>
+                        <p>Vetted premium suppliers</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="assets/giftgiving3.jpg" alt="Gift Service" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Elegant Presentation</h4>
+                        <p>Professional gift wrapping</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="booking-content">
+                <div class="booking-info">
+                    <span class="section-subtitle">Get Started</span>
+                    <h2 class="section-title">Ready to Elevate Your Shopping Experience?</h2>
+                    <p class="section-description">Connect with us today to discuss your personal shopping needs and discover how we can transform your style journey</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>WhatsApp</h4>
+                                <p>Quick responses & consultations</p>
+                                <a href="https://wa.me/27825344824" class="method-link">Message Now</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Instagram</h4>
+                                <p>See our latest work & style tips</p>
+                                <a href="https://instagram.com/shopwithme_official_" class="method-link">Follow Us</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-tiktok"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>TikTok</h4>
+                                <p>Style inspiration & behind scenes</p>
+                                <a href="https://tiktok.com/@cpt_personalshopper" class="method-link">Watch Videos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-form-container">
+                    <div class="booking-form">
+                        <h3>Book Your Consultation</h3>
+                        <form id="consultation-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" required>
+                                <label for="name">Full Name</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" required>
+                                <label for="email">Email Address</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" required>
+                                <label for="phone">Phone Number</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <select id="service" name="service" required>
+                                    <option value=""></option>
+                                    <option value="hairlink">Hairlink Connections</option>
+                                    <option value="shopping">Personal Shopping</option>
+                                    <option value="sourcing">Global Sourcing</option>
+                                    <option value="gifting">Luxury Gifting</option>
+                                </select>
+                                <label for="service">Service Needed</label>
+                            </div>
+                            
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="4"></textarea>
+                                <label for="message">Special Requirements</label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <span>Submit Request</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
+    <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <p><strong>Phone:</strong> 0785344824</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h2 class="section-title">Let's Create Something Beautiful Together</h2>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>078 534 4824</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>michebusiness@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Cape Town, South Africa</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://wa.me/27825344824" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://instagram.com/shopwithme_official_" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://tiktok.com/@cpt_personalshopper" class="social-link">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p><strong>Email:</strong> michebusiness@gmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p><strong>Location:</strong> Cape Town, South Africa</p>
+                
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map"></i>
+                        <p>Cape Town Service Area</p>
+                        <span>Personal shopping services available throughout Cape Town and surrounds</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Personal Shopper by Miche. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Shop with Miché</h3>
+                        <p>Luxury Personal Shopping & Styling</p>
+                    </div>
+                    <p class="footer-description">Premium personal shopping services in Cape Town, offering curated style experiences, haircare connections, and bespoke gifting solutions.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Hairlink Connections</a></li>
+                        <li><a href="#services">Personal Shopping</a></li>
+                        <li><a href="#services">Global Sourcing</a></li>
+                        <li><a href="#services">Luxury Gifting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="footer-social">
+                        <a href="https://wa.me/27825344824"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/shopwithme_official_"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@cpt_personalshopper"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-phone"></i> 078 534 4824</p>
+                        <p><i class="fas fa-envelope"></i> michebusiness@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Shop with Miché. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
 </body>
 </html>
